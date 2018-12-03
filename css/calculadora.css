@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+*{
+ box-sizing: border-box;
+}
+@font-face{
+    font-family: 'Merriweather', serif;
+}
+
+/*aspectos generales: bordes y color de fondo de calculadora*/
+
+.calculadora { 
+    border: 3px rgb(10, 4, 0) ridge; 
+    width: 250px;
+    text-align: center; 
+    background-color: #c2c1c1;
+    font-family: "'Merriweather', serif"; 
+}
+/*pantalla de visualización: bordes, posición, color de fondo, estilo letra.*/
+#textoPantalla { 
+    width: 185px; 
+    border: 2px black solid; 
+    text-align: right; 
+    position: relative; 
+    left: 23px;  
+    padding: 0px 5px;
+    background-color: rgb(122, 118, 118); 
+    font-family: "'Merriweather', serif"; 
+    overflow: hidden;
+} 
+/*botones normales: anchura y margen*/
+.calculadora [type=button] { 
+    width: 35px; 
+    padding: 0;
+    background-color: #3d3a3a;
+    color: rgb(209, 209, 209);
+ 
+}
+/*botones especiales*/
+.calculadora input.largo { 
+    color:  #ffffff; 
+    width: 60px; 
+   /* font-family: "'Merriweather', serif";*/
+    background-color: black;
+}
