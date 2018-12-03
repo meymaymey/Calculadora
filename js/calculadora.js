@@ -34,25 +34,25 @@ function numero(xx) { //recoge el número pulsado en el argumento.
     if (x=="0" || xi==1  ) { // inicializar un número, 
        pantalla.innerHTML=xx; //mostrar en pantalla
        x=xx; //guardar número
-       if (xx==".") { //si escribimos una coma al principio del número
+        if (xx==".") { //si escribimos una coma al principio del número
           pantalla.innerHTML="0."; //escribimos 0.
           x=xx; //guardar número
           coma=1; //cambiar estado de la coma
-          }
-      }
-      else { //continuar escribiendo un número
-          if (xx=="." && coma==0) { //si escribimos una coma decimal p�r primera vez
-              pantalla.innerHTML+=xx;
-              x+=xx;
-              coma=1; //cambiar el estado de la coma  
-          }
+        }
+    }
+    else { //continuar escribiendo un número
+        if (xx=="." && coma==0) { //si escribimos una coma decimal p�r primera vez
+            pantalla.innerHTML+=xx;
+            x+=xx;
+            coma=1; //cambiar el estado de la coma  
+        }
          //si intentamos escribir una segunda coma decimal no realiza ninguna acción.
-          else if (xx=="." && coma==1) {} 
+        else if (xx=="." && coma==1) {} 
           //Resto de casos: escribir un número del 0 al 9: 	 
-          else {
-              pantalla.innerHTML+=xx;
-              x+=xx
-          }
+        else {
+            pantalla.innerHTML+=xx;
+            x+=xx
+        }
        }
        xi=0 //el número está iniciado y podemos ampliarlo.
     }
@@ -68,6 +68,7 @@ window.onload = function(){ //Acciones tras cargar la página
     ni=0; //número oculto o en espera.
     op="no"; //operación en curso; "no" =  sin operación.
 
+//funciones para operar, sumar, restar, multuplicar, dividir
 function operar(s){
     ni=x //ponemos el 1 número en "numero en espera" para poder escribir el segundo.
     op=s; //guardamos tipo de operación.
@@ -85,12 +86,12 @@ function igualar() {
         x=sol; //guardamos la solución
         op="no"; //ya no hay operaciones pendientes
         xi=1; //se puede reiniciar la pantalla.
-        }
+    }
 }
 
 function operar(s) {
     igualar(); //si hay operaciones pendientes se realizan primero
-        ni=x; //ponemos el 1� número en "numero en espera" para poder escribir el segundo.
+        ni=x; //ponemos el primer número en "numero en espera" para poder escribir el segundo.
         op=s; //guardamos tipo de operación.
         xi=1; //inicializar pantalla.
 }
@@ -109,13 +110,13 @@ function porcent() {
 }
 
 function opuest() { 
-            nx=Number(x); //convertir en número
-            nx=-nx; //cambiar de signo
-            x=String(nx); //volver a convertir a cadena
-            pantalla.innerHTML=x; //mostrar en pantalla.
+        nx=Number(x); //convertir en número
+        nx=-nx; //cambiar de signo
+        x=String(nx); //volver a convertir a cadena
+        pantalla.innerHTML=x; //mostrar en pantalla.
 }
 
-function inve() {
+function invertir() {
     nx=Number(x);
     nx=(1/nx);
     x=String(nx);		 
